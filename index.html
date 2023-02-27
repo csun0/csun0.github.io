@@ -21,12 +21,16 @@
   <style>
     #toTopBtn {
       position: fixed;
-      bottom: 26px;
-      right: 39px;
+      bottom: 30px;
+      right: 30px;
       z-index: 98;
-      padding: 21px;
-      background-color: #78bcff;
+      padding: 20px;
+      background-color: hsla(5, 76%, 62%, .8);
       background: url(files/arrow-up.svg) no-repeat center 10%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .05) !important;
+
+      display: inline-block;
+
     }
 
     nav.sticky-top {
@@ -99,6 +103,7 @@
           <nav class="nav nav-pills flex-column">
             <a class="nav-link" href="#research">Research</a>
             <a class="nav-link" href="#teaching">Teaching</a>
+            <a class="nav-link" href="#art">Art</a>
           </nav>
         </nav>
       </div>
@@ -154,8 +159,8 @@
         tristique, neque orci suscipit est, malesuada tincidunt erat purus nec nisi. Etiam a sagittis mauris, eget
         ullamcorper ante. Nunc malesuada volutpat odio. Mauris elementum auctor magna, vel laoreet sapien consequat
         eu. Ut convallis augue at risus semper sodales. Ut mauris nunc, ultrices eget ultrices vel, mollis sit amet
-        dui. Nullam in elit blandit sapien posuere commodo. Etiam sollicitudin lorem dolor. <br><br>
-
+        dui. Nullam in elit blandit sapien posuere commodo. Etiam sollicitudin lorem dolor. <br>
+        <hr><br>
 
 
         <h2 id="research">Research</h2>
@@ -175,7 +180,7 @@
             December 2019 - May 2021
           </li>
         </ul>
-        <br>
+        <hr><br>
 
         <h2 id="teaching">Teaching</h2>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -224,26 +229,44 @@
             dui. Nullam in elit blandit sapien posuere commodo. Etiam sollicitudin lorem dolor.
           </div>
         </div>
+        <hr><br>
 
-        <h2>Code</h2>
+
+        <h2 id="art">Art</h2>
         <div class="row">
-          <div class="col-4">
+          <div class="col-sm-4  d-none d-sm-block">
             <a href="files/small_colors.jpg" data-toggle="lightbox">
-            <img src="files/small_colors.jpg" class="d-block w-100" alt="colors">
+              <img src="files/small_colors.jpg" class="d-block w-100" alt="colors">
             </a>
           </div>
-          <div class="col-4">
+          <div class="col-sm-4 d-none d-sm-block">
             <a href="files/small_pink.jpg" data-toggle="lightbox">
               <img src="files/small_pink.jpg" class="d-block w-100" alt="colors">
             </a>
           </div>
-          <div class="col-4">
+          <div class="col-sm-4 d-none d-sm-block">
             <a href="files/small_upside.jpg" data-toggle="lightbox">
               <img src="files/small_upside.jpg" class="d-block w-100" alt="colors">
             </a>
           </div>
-        </div>
 
+          <div class="col-xs-4 d-block d-sm-none">
+            <a href="files/small_colors.jpg">
+              <img src="files/small_colors.jpg" class="d-block w-100" alt="colors"><br>
+            </a>
+          </div>
+          <div class="col-xs-4 d-block d-sm-none">
+            <a href="files/small_pink.jpg">
+              <img src="files/small_pink.jpg" class="d-block w-100" alt="colors"><br>
+            </a>
+          </div>
+          <div class="col-xs-4 d-block d-sm-none">
+            <a href="files/small_upside.jpg">
+              <img src="files/small_upside.jpg" class="d-block w-100" alt="colors"><br>
+            </a>
+          </div>
+        </div>
+        <hr>
 
       </div>
     </div>
@@ -288,7 +311,7 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 </body>
 
 </html>
