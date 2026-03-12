@@ -31,7 +31,7 @@ const App = () => {
             </p>
             <div className="pt-2">
               <a href="https://github.com/csun0" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 group">
-                View on GitHub 
+                View on GitHub! 
                 <span className="inline-block transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
               </a>
             </div>
