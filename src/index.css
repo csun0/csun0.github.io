@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent-green: #00FF00;
+  --color-accent-blue: #5555FF;
+  --color-muted: #888888;
+  --font-mono: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-mono antialiased min-h-screen m-0 p-0;
+  }
+  
+  a {
+    @apply text-accent-blue transition-colors hover:underline;
+  }
+}
