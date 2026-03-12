@@ -4,15 +4,54 @@
   --color-accent-green: #00FF00;
   --color-accent-blue: #5555FF;
   --color-muted: #888888;
-  --font-mono: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+  --color-bg-black: #000000;
+  --font-mono: "JetBrains Mono", "Fira Code", "Menlo", "Monaco", "Consolas", monospace;
 }
 
 @layer base {
   body {
-    @apply bg-black text-white font-mono antialiased min-h-screen m-0 p-0;
+    @apply bg-bg-black text-white font-mono antialiased min-h-screen m-0 p-0 selection:bg-accent-green selection:text-black;
   }
   
   a {
-    @apply text-accent-blue transition-colors hover:underline;
+    @apply text-accent-blue transition-colors hover:underline decoration-1 underline-offset-4;
+  }
+
+  h1, h2, h3 {
+    @apply font-bold m-0 p-0;
+  }
+
+  p {
+    @apply m-0 p-0 leading-relaxed;
+  }
+}
+
+@layer components {
+  .terminal-section {
+    @apply mb-12;
+  }
+
+  .terminal-header {
+    @apply text-muted font-bold mb-6 tracking-tight;
+  }
+
+  .terminal-entry {
+    @apply mb-8;
+  }
+
+  .terminal-timestamp {
+    @apply text-muted mr-3;
+  }
+
+  .terminal-title {
+    @apply font-bold text-white uppercase;
+  }
+
+  .terminal-body {
+    @apply text-muted mt-2 pl-4 border-l border-white/10;
+  }
+
+  .terminal-success {
+    @apply text-accent-green ml-2 font-bold;
   }
 }
