@@ -1,57 +1,69 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent-green: #00FF00;
-  --color-accent-blue: #5555FF;
-  --color-muted: #888888;
-  --color-bg-black: #000000;
-  --font-mono: "JetBrains Mono", "Fira Code", "Menlo", "Monaco", "Consolas", monospace;
+  --color-moss: #2E4036;
+  --color-clay: #CC5833;
+  --color-cream: #F2F0E9;
+  --color-charcoal: #1A1A1A;
+
+  --font-sans: "Plus Jakarta Sans", "Outfit", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --radius-xl: 2rem;
+  --radius-2xl: 3rem;
+  --radius-pill: 9999px;
 }
 
 @layer base {
   body {
-    @apply bg-bg-black text-white font-mono antialiased min-h-screen m-0 p-0 selection:bg-accent-green selection:text-black;
-  }
-  
-  a {
-    @apply text-accent-blue transition-colors hover:underline decoration-1 underline-offset-4;
-  }
-
-  h1, h2, h3 {
-    @apply font-bold m-0 p-0;
-  }
-
-  p {
-    @apply m-0 p-0 leading-relaxed;
+    @apply bg-cream text-charcoal font-sans antialiased min-h-screen m-0 p-0 selection:bg-moss selection:text-cream overflow-x-hidden;
   }
 }
 
 @layer components {
-  .terminal-section {
-    @apply mb-12;
+  /* Global CSS Noise Overlay via SVG turbulence */
+  #noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9998;
+    background: transparent;
+    opacity: 0.05;
   }
-
-  .terminal-header {
-    @apply text-muted font-bold mb-6 tracking-tight;
+  
+  /* Applying the filter */
+  #noise-overlay::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    opacity: 0.8;
   }
-
-  .terminal-entry {
-    @apply mb-8;
+  
+  .heading-tight {
+    @apply tracking-tighter font-semibold;
   }
-
-  .terminal-timestamp {
-    @apply text-muted mr-3;
+  
+  .heading-serif {
+    @apply font-serif italic;
   }
-
-  .terminal-title {
-    @apply font-bold text-white uppercase;
+  
+  .magnetic-button {
+    @apply relative overflow-hidden transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98];
   }
-
-  .terminal-body {
-    @apply text-muted mt-2 pl-4 border-l border-white/10;
+  
+  .magnetic-button::after {
+    @apply content-[''] absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 ease-out z-[-1];
   }
-
-  .terminal-success {
-    @apply text-accent-green ml-2 font-bold;
+  
+  .magnetic-button:hover::after {
+    @apply translate-y-0;
   }
 }
